@@ -1,0 +1,27 @@
+# include <stdio.h>
+int prime(int k)
+{
+    int j;
+    for(j = 2; j * j <= k; j++)
+        if( k % j == 0)
+            return 0;
+    return 1;
+}
+int main() {
+    int a, i;
+    scanf("%d",&a);
+    if(prime(a)){
+        printf("wrong number");
+        return 0;
+    }
+    for(i=2;i*i<a;i++)
+        if(a%i==0){
+            if(prime(i) && prime(a/i))
+                printf("%d %d",i,a/i);
+            else {
+                printf("wrong number");
+                break;
+            }
+        }
+    return 0;
+}
