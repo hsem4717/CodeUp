@@ -1,0 +1,17 @@
+#include <stdio.h>
+int a[100001]={1, 1, 2};
+
+int re(int b){
+	if(b==1) return 1;
+	if(a[b]!=0) return a[b];
+	else return a[b] = (re(b-1) + re(b-2) + re(b-3))%1000;
+}
+
+int main(){
+	
+	int a;
+	scanf("%d", &a);
+	printf("%d\n", re(a));
+	
+	return 0;
+}
