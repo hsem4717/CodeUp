@@ -1,0 +1,11 @@
+#include <stdio.h>
+int main (void)
+{
+    
+    int a, b, c, d, sum;
+    scanf("%d %d %d %d",&a, &b, &c, &d);
+    sum = a+ b+ c+ d;
+    printf(sum==4?"윷":sum==3?"걸":sum==2?"개":sum==1?"도":"모");
+    return 0;
+}
+
