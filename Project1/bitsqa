@@ -1,0 +1,44 @@
+#include "stdio.h"
+ 
+ 
+int main(void)
+{
+    int Arr[101][101] = {};
+    
+    
+    int n,m;
+    scanf("%d %d", &n, &m);
+    int x = 1;
+    int j = 1;
+    
+    for(int i = 1; i <=n+m; i++){
+        int temp_i = i;
+        
+        if(temp_i > n){
+            temp_i = n;
+            j++;
+        }
+        int temp_j = j;
+        while(temp_i > 0){
+            if(i + 1 ==  temp_i + temp_j){
+                Arr[temp_i][temp_j] = x;
+                x++;
+                
+            }
+            
+                temp_i--;
+                temp_j++;
+            
+            if(temp_j > m){break;}
+        }
+        
+    }
+    for(int i = 1; i <= n; i++){
+        for(int j = 1; j <= m ; j++){
+            printf("%d ",Arr[i][j]);
+        }
+        printf("\n");
+    }
+    
+    return 0;
+}
